@@ -6,7 +6,11 @@ const cors = require("cors");
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://skillswap-delta-eight.vercel.app/"],
+  }),
+);
 
 mongoose
   .connect(process.env.MONGO_URI)
@@ -35,11 +39,9 @@ app.post("/api/swaps", async (req, res) => {
 });
 app.put("/api/swaps/:id", async (req, res) => {
   try {
-    const updatedSwap = await Swap.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true }
-    );
+    const updatedSwap = await Swap.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
     res.status(200).json(updatedSwap);
   } catch (error) {
     res.status(400).json({ message: error.message });
