@@ -1,14 +1,26 @@
 {
-  "name": "backend",
+  "name": "skillswap-backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "dev": "nodemon server.js"
+  "description": "Node.js/Express backend API for the SkillSwap platform - a community-driven skill exchange application",
+  "author": "Joshua Nnorom",
+  "license": "MIT",
+  "homepage": "https://github.com/JstMeJosh/skillswap-backend",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JstMeJosh/skillswap-backend.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "main": "server.js",
+  "keywords": [
+    "express",
+    "mongodb",
+    "skill-exchange",
+    "api",
+    "rest"
+  ],
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
   "type": "commonjs",
   "dependencies": {
     "cors": "^2.8.6",
