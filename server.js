@@ -8,7 +8,13 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://skillswap-delta-eight.vercel.app/"],
+    origin: [
+      "http://localhost:5173",
+      "http://localhost:3000",
+      "https://skillswap-delta-eight.vercel.app",
+      "https://skillswap-delta-eight.vercel.app/",
+      process.env.FRONTEND_URL || ""
+    ].filter(Boolean),
   }),
 );
 
