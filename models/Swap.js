@@ -17,6 +17,10 @@ const SwapSchema = mongoose.Schema(
     description: {
       type: String,
     },
+    createdBy: {
+  type: String,
+  required: false
+    },
   },
   {
     timestamps: true,
